@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * pr_str - takes string and return string
+ * @arch: string
+ * Return: string
+ */
+
 char *pr_str(va_list arch)
 {
 	char *q;

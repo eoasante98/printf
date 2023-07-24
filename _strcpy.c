@@ -1,20 +1,21 @@
 #include "main.h"
+
 /**
  * _strcpy - copies something
- * @des: ...
- * @src: ...
- * Return: maybe array?
+ * @des: destination
+ * @src: source
+ * Return: array
  */
 char *_strcpy(char *des, char *src)
 {
-	int w = 0;
+	int v = 0;
 
-	while (src[w] != '\0')
+	while (src[v] != '\0')
 	{
-		des[w] = src[w];
-		w++;
+		des[v] = src[v];
+		v++;
 	}
 
-	des[w] = src[w];
+	des[v] = src[v];
 	return (des);
 }
