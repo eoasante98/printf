@@ -1,5 +1,10 @@
 #include "main.h"
 
+/**
+ * pr_rot13 - encrypts string with rot 13
+ * @arch: string to change
+ * Return: modified string
+ */
 char *pr_rot13(va_list arch)
 {
 	int x = 0;
@@ -7,7 +12,7 @@ char *pr_rot13(va_list arch)
 	char *str;
 
 	str = va_arg(arch, char *);
-
+	/*access va_arg once*/
 	pstr = malloc(sizeof(char) * (_strlen(str) + 1));
 	if (pstr == NULL)
 		return (NULL);
