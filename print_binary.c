@@ -2,6 +2,8 @@
 
 /**
  * pr_bi - prints binary from int
+ * @arch: list of int to change
+ * Return: binary string
  */
 
 char *pr_bi(va_list arch)

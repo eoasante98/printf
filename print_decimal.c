@@ -2,6 +2,10 @@
 
 /**
  * _decihelp - turn int into a string
+ * @d_ten: divisible by 10
+ * @len: length of number
+ * @h: number to convert to string
+ * Return: string
  */
 
 char *_decihelp(inr d_ten, int len, int h)
@@ -38,6 +42,8 @@ char *_decihelp(inr d_ten, int len, int h)
 
 /**
  * pr_dec - gets length to put in _decihelp
+ * @log: takes arg
+ * Return: integaer string
  */
 
 char *pr_dec(va_list arch)
