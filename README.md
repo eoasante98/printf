@@ -1,6 +1,6 @@
-Readme file of the pseudo printf function in C
+Readme file of the pseudo "printf" function in C
  
-This programming project we are asked to create a simplified printf function in C that can handle certain specifiers. In the project, we:
+For this programming project we are asked to create a simplified printf function in C that can handle certain specifiers. In the project, we:
  
 Task 1: Handle simple string printing
 ----------------------------------------
