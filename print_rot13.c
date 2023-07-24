@@ -14,19 +14,19 @@ char *pr_rot13(va_list arch)
 
 	while (str[x] != '\0')
 	{
-		if ((str[x] >= 'a' && str[x] <= 'm') || (str[x] >= 
+		if ((str[x] >= 'a' && str[x] <= 'm') || (str[x] >=
 					'A' && str[x] <= 'M'))
 			pstr[x] = str[x] + 13;
 
 		else if ((str[x] >= 'n' && str[x] <= 'z') || (str[x] >=
 					'N' && str[x] <= 'Z'))
-			pstr[x] = str[x] -13;
+			pstr[x] = str[x] - 13;
 
 		else
 			(pstr[x] = str[x]);
 		x++;
 	}
-	pstr[x] ='\0';
+	pstr[x] = '\0';
 
 	return (pstr);
 }
