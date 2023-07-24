@@ -258,3 +258,144 @@ Task 17: Handle the `#` flag for hexadecimal and octal numbers
    ```
    Expected output: `Hexadecimal: 0xff` and `Octal: 0377`
 
+Task 18: Handle the `0` flag for zero-padding
+--------------------------------------------------------
+ 
+1. Add support for the `0` flag to pad integers with leading zeros.
+2. For example:
+   ```c
+   int main(void)
+   {
+       int num = 42;
+       _printf("Padded with zeros: %010d\n", num);
+       return (0);
+   }
+   ```
+   Expected output: `Padded with zeros: 0000000042`
+ 
+Task 19: Handle the `-` flag for left-justification
+--------------------------------------------------------
+ 
+1. Add support for the `-` flag to left-justify strings and numbers.
+2. For example:
+   ```c
+   int main(void)
+   {
+       char *str = "Left Justified";
+       _printf("Left Justify: %-20s\n", str);
+       return (0);
+   }
+   ```
+   Expected output: `Left Justify: Left Justified     ` (with spaces at the end to make it 20 characters wide)
+ 
+Task 20: Handle the space and + flags for signed numbers
+--------------------------------------------------------
+ 
+1. Add support for the space and `+` flags to print a space or `+` before positive signed numbers.
+2. For example:
+   ```c
+   int main(void)
+   {
+       int num1 = 42, num2 = -42;
+       _printf("Positive: % d\n", num1);
+       _printf("Negative: %+d\n", num2);
+       return (0);
+   }
+   ```
+   Expected output: `Positive:  42` and `Negative: -42`
+ 
+Task 21: Handle the l and h length modifiers for integers
+--------------------------------------------------------
+ 
+1. Add support for the `l` and `h` length modifiers to handle long and short integers.
+2. For example:
+   ```c
+   int main(void)
+   {
+       long int num1 = 10000000000;
+       short int num2 = 200;
+       _printf("Long: %ld\n", num1);
+       _printf("Short: %hd\n", num2);
+       return (0);
+   }
+   ```
+   Expected output: `Long: 10000000000` and `Short: 200`
+ 
+Task 22: Handle the l length modifier for printing strings
+--------------------------------------------------------
+ 
+1. Add support for the `l` length modifier to handle wide characters (wchar_t*) for strings.
+2. For example:
+   ```c
+   int main(void)
+   {
+       wchar_t *wstr = L"Hello, wide world!";
+       _printf("Wide String: %ls\n", wstr);
+       return (0);
+   }
+   ```
+   Expected output: `Wide String: Hello, wide world!`
+ 
+Task 23: Handle the # flag for floating-point numbers
+--------------------------------------------------------
+ 
+1. Add support for the `#` flag to always include a decimal point for floating-point numbers.
+2. For example:
+   ```c
+   int main(void)
+   {
+       double num = 42.0;
+       _printf("With Decimal Point: %#f\n", num);
+       return (0);
+   }
+   ```
+   Expected output: `With Decimal Point: 42.000000`
+ 
+Task 24: Handle the width and precision modifiers for floating-point numbers
+--------------------------------------------------------
+ 
+1. Add support for the width and precision modifiers for floating-point numbers.
+2. For example:
+   ```c
+   int main(void)
+   {
+       double num = 3.14159;
+       _printf("Formatted Float: %10.3f\n", num);
+       return (0);
+   }
+   ```
+   Expected output: `Formatted Float:      3.142`
+ 
+Task 25: Handle custom format specifiers for data types
+--------------------------------------------------------
+ 
+1. Add support for custom format specifiers for specific data types (e.g., `%p` for pointers).
+2. For example:
+   ```c
+   int main(void)
+   {
+       char *str = "Hello";
+       char *ptr = &str;
+       _printf("String: %s, Pointer: %p\n", str, ptr);
+       return (0);
+   }
+   ```
+   Expected output: `String: Hello, Pointer: 0xADDRESS`
+ 
+Task 26: Handle the n format specifier for character count
+--------------------------------------------------------
+ 
+1. Add support for the `n` format specifier to store the number of characters written so far in a pointer argument.
+2. For example:
+   ```c
+   int main(void)
+   {
+       int count;
+       _printf("Count: %d%n\n", 42, &count);
+       _printf("Characters written so far: %d\n", count);
+       return (0);
+   }
+   ```
+   Expected output: `Count: 42` and `Characters written so far: 6`
+ 
+
