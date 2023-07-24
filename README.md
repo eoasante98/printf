@@ -398,4 +398,13 @@ Task 26: Handle the n format specifier for character count
    ```
    Expected output: `Count: 42` and `Characters written so far: 6`
  
+Compilation and Styling
+ 
+Files were compiled by an Ubuntu 20.04 LTS using ```$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c``` command.
+All files were betty styled.
+ 
+ 
+Authors:
+ 
+@queenyaa and @eoasante98 
 
