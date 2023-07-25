@@ -76,7 +76,7 @@ unsigned int conv_S(va_list args, buff_t *out, unsigned char flgs,
 		if (*(str + ind) < 32 || *(str + ind) >= 127)
 		{
 			t += _memcpy(out, hex, 2);
-			if (*(str +ind) < 16)
+			if (*(str + ind) < 16)
 				t += _memcpy(out, &zero, 1);
 			t += conv_ubase(out, *(str + ind),
 					"0123456789ABCDEF", flgs, 0, 0);
