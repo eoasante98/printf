@@ -3,9 +3,9 @@
 /**
  * pr_wth - stores width modifier
  * @out: contains a character array
- * @printed: ...
- * @flgs: ...
- * @wth: ...
+ * @printed: current number of characters already printed to output for a given number specifier
+ * @flgs: flag modifier
+ * @wth: width modifier
  * Return: number of bytes in buffer
  */
 
@@ -25,12 +25,12 @@ unsigned int pr_wth(buff_t *out, unsigned int printed,
 }
 
 /**
- * pr_str_wth - ...
- * @out: ...
- * @flgs: ..
- * @wth: ...
- * @prec: ...
- * @sz: ...
+ * pr_str_wth - stores leading spaces to a buffer for a width mod
+ * @out: character array container
+ * @flgs: flag modifier
+ * @wth: width modifier
+ * @prec: precision modifier
+ * @sz: string size
  * Return: number of bytes in buffer
  */
 
@@ -51,11 +51,11 @@ unsigned int pr_str_wth(buff_t *out, unsigned char flgs,
 }
 
 /**
- * pr_nwth - ...
- * @out: ...
- * @printed: ....
- * @flgs: ...
- * @wth: ...
+ * pr_nwth - stores trailing spaces to a buffer for a '-' flag
+ * @out: character array container
+ * @printed: number of bytes already stored to output for a given specifier
+ * @flgs: flag modifiers
+ * @wth: width modifier
  * Return: number of bytes in buffer
  */
 
