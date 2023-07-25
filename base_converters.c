@@ -1,9 +1,22 @@
 #include "main.h"
 
-unsigned int conv_sbase(buff_t *out, long int num, char *base, unsigned char flgs, int wth, int prec);
-unsigned int conv_ubase(buff_t *out, unsigned long int num, char *base, unsigned char flgs, int wth, int prec);
+unsigned int conv_sbase(buff_t *out, long int num, char *base,
+		unsigned char flgs, int wth, int prec);
+unsigned int conv_ubase(buff_t *out, unsigned long int num, char *base,
+		unsigned char flgs, int wth, int prec);
 
-unsigned int conv_sbase(buff_t *out, long int num, char *base, unsigned char flgs, int wth, int prec)
+/**
+ * conv_sbase - converts signed long to base
+ * @num: signed long
+ * @out: buff_t struct with char array
+ * @flgs: flags
+ * @base: pointer to string
+ * @wth: width
+ * @prec: precision
+ * Return: number of bytes in buffer
+ */
+unsigned int conv_sbase(buff_t *out, long int num, char *base,
+		unsigned char flgs, int wth, int prec)
 {
 	int sz;
 	char digit, pad = '0';
@@ -33,7 +46,18 @@ unsigned int conv_sbase(buff_t *out, long int num, char *base, unsigned char flg
 	return (t);
 }
 
-unsigned int conv_ubase(buff_t *out, unsigned long int num, char *base, unsigned char flgs, int wth, int prec)
+/**
+ * conv_ubase - converts unsigned long into a buffer
+ * @base: pointer to string
+ * @wth: width
+ * @out: buff_t struct in char array
+ * @num: unsigned long
+ * @flgs: flag
+ * @prec: precision
+ * Return: number bytes in buffer
+ */
+unsigned int conv_ubase(buff_t *out, unsigned long int num,
+		char *base, unsigned char flgs, int wth, int prec)
 {
 	unsigned int sz, t = 1;
 	char digit, pad = '0', *lead = "0x";
@@ -42,7 +66,7 @@ unsigned int conv_ubase(buff_t *out, unsigned long int num, char *base, unsigned
 		sz++;
 
 	if (num >= sz)
-		t += conv_ubase(out, num / sz, base, flgs, wth - 1, prec -1);
+		t += conv_ubase(out, num / sz, base, flgs, wth - 1, prec - 1);
 
 	else
 	{
@@ -58,7 +82,7 @@ unsigned int conv_ubase(buff_t *out, unsigned long int num, char *base, unsigned
 		{
 			pad = (ZERO_FLG == 1) ? '0' : ' ';
 			for (; wth > 1; wth--)
-				t =+ _memcpy(out, &pad, 1);
+				t += _memcpy(out, &pad, 1);
 		}
 		if (((flgs >> 5) & 1) == 1)
 			t += _memcpy(out, lead, 2);
@@ -69,5 +93,3 @@ unsigned int conv_ubase(buff_t *out, unsigned long int num, char *base, unsigned
 
 	return (t);
 }
-
-	
