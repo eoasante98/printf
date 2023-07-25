@@ -14,7 +14,7 @@
 typedef struct types
 {
 	char g;
-	char* (*func)(va_list);
+	char *(*bf)(va_list);
 } print;
 
 /* print functions*/
@@ -33,4 +33,5 @@ char *cbuf(void);
 void wbuf(char *buf, int len, va_list arch);
 char *_strcpy(char *des, char *src);
 int _strlen(char *s);
+
 #endif
