@@ -7,8 +7,8 @@
 
 /**
  * struct types - struct
- * @id: identifier of type to print (e.g. c for char)
- * @funct: ptr to functions that print according to identifier (e.g. print_c)
+ * @g: identifier of type to print (e.g. c for char)
+ * @bf: ptr to functions that print according to identifier (e.g. print_c)
  */
 
 typedef struct types
@@ -18,10 +18,10 @@ typedef struct types
 } print;
 
 /* print functions*/
-int_printf(const char *format, ...);
+int _printf(const char *format, ...);
 char *pr_str(va_list arch);
 char *pr_char(va_list arch);
-char *pr_dec(va_list arch);
+int *pr_dec(va_list arch);
 char *pr_bi(va_list arch);
 char *pr_rot13(va_list arch);
 char *pr_rev(va_list arch);

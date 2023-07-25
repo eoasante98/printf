@@ -46,12 +46,12 @@ int _printf(const char *format, ...)
 			}
 			if (format[x] == '%')
 			{
-				len = buf_ove(v, len);
+				len = buf_over(v, len);
 				v[len++] = format[x];
 				tot_len++;
 			}
 		}
-		else if (format[x] == 'R')
+		else (format[x] == 'R')
 		{
 			bf = &pr_rot13;
 			str = bf(arch);
@@ -62,7 +62,7 @@ int _printf(const char *format, ...)
 				return (-1);
 			}
 			y = 0;
-			while (str[j] != '\0')
+			while (str[y] != '\0')
 			{
 				len = buf_over(v, len);
 				v[len++] = str[y];
@@ -75,13 +75,13 @@ int _printf(const char *format, ...)
 			bf = gfunc(format[x]);
 			if (bf == NULL)
 			{
-				len = buf_over(v, lent);
+				len = buf_over(v, len);
 				v[len++] = '%'; tot_len++;
 				v[len++] = format[x]; tot_len++;
 			}
 			else
 			{
-				str - bf(arch);
+				str = bf(arch);
 				if (str == NULL)
 				{
 					va_end(arch);

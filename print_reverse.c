@@ -21,7 +21,7 @@ char *pr_rev(va_list arch)
 	if (back == NULL)
 		return (NULL);
 
-	for ( = (len -1); y >= 0; y--)
+	for (y = (len - 1); y >= 0; y--)
 	{
 		back[x++] = str[y];
 	}

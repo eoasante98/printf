@@ -8,7 +8,7 @@
  * Return: string
  */
 
-char *_decihelp(inr d_ten, int len, int h)
+int *_decihelp(int d_ten, int len, int h)
 {
 	char *str;
 	int x = 0;
@@ -42,11 +42,11 @@ char *_decihelp(inr d_ten, int len, int h)
 
 /**
  * pr_dec - gets length to put in _decihelp
- * @log: takes arg
+ * @arch: takes arg
  * Return: integaer string
  */
 
-char *pr_dec(va_list arch)
+int *pr_dec(va_list arch)
 {
 	int len, d_ten, h, tmp;
 

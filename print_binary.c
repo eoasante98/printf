@@ -12,7 +12,7 @@ char *pr_bi(va_list arch)
 	int x, m;
 	char *q;
 
-	m = va_arc(arch, int);
+	m = va_arg(arch, int);
 	x = m;
 
 	q = malloc(sizeof(char) * 33);
@@ -37,7 +37,7 @@ char *pr_bi(va_list arch)
 	{
 		q[y++] = (x / t + '0');
 		x %= t;
-		t /=2;
+		t /= 2;
 	}
 	q[y] = '\0';
 	return (q);
