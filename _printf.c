@@ -21,6 +21,7 @@ void wipe(va_list args, buff_t *out)
  * @format: character string
  * @out: buff_t struct buffer
  * @args: va_list arguments
+ * Return: ...
  */
 int r_printf(const char *format, va_list args, buff_t *out)
 {

@@ -1,10 +1,13 @@
 #include "main.h"
 
+unsigned int _memcpy(buff_t *out, const char *src, unsigned int n);
+void free_buff(buff_t *out);
+buff_t *init_buff(void);
 /**
  * _memcpy - bytes of memory copied from src
- * @out: ...
- * @src: ...
- * @n: ...
+ * @out: buffer_t struct
+ * @src: source pointer
+ * @n: number of bytes
  * Return: copied bytes
  */
 unsigned int _memcpy(buff_t *out, const char *src, unsigned int n)
@@ -31,7 +34,7 @@ unsigned int _memcpy(buff_t *out, const char *src, unsigned int n)
 
 /**
  * free_buff - Frees 1 buff_t struct
- * @out: ...
+ * @out: The buff_t struct to be freed
  */
 void free_buff(buff_t *out)
 {
