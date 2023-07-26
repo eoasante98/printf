@@ -100,7 +100,7 @@ void free_buff(buff_t *out);
 unsigned int conv_sbase(buff_t *out, long int num, char *base,
 		unsigned char flgs, int wth, int prec);
 buff_t *init_buff(void);
-unsigned int conv_ubase(buff_t *out, long int num, char *base,
+unsigned int conv_ubase(buff_t *out, unsigned long int num, char *base,
 		unsigned char flgs, int wth, int prec);
 unsigned int _memcpy(buff_t *out, const char *src, unsigned int n);
 
@@ -115,5 +115,13 @@ int h_wth(va_list args, const char *modifier, char *ind);
 unsigned char h_length(const char *modifier, char *ind);
 unsigned int (*h_spec(const char *spec))(va_list, buff_t *,
 		unsigned char, int, int, unsigned char);
+
+/* modifiers */
+unsigned int pr_str_wth(buff_t *out, unsigned char flgs, int wth,
+		int prec, int sz);
+unsigned int pr_wth(buff_t *out, unsigned int printed,
+		unsigned char flgs, int wth);
+unsigned int pr_nwth(buff_t *out, unsigned int printed,
+		unsigned char flgs, int wth);
 
 #endif /* MAIN_H */

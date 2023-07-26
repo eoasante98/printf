@@ -39,7 +39,7 @@ int r_printf(const char *format, va_list args, buff_t *out)
 			flgs = h_flgs(format + x + 1, &tmpo);
 			wth = h_wth(args, format + x + tmpo + 1, &tmpo);
 			prec = h_p(args, format + x + tmpo + 1, &tmpo);
-			len = h_length(format + x tmpo + 1, &tmpo);
+			len = h_length(format + x + tmpo + 1, &tmpo);
 
 			f = h_spec(format + x + tmpo + 1);
 			if (f != NULL)

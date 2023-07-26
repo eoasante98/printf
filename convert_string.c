@@ -1,5 +1,6 @@
 #include "main.h"
 
+
 /**
  * conv_s - converts ...
  * @args: va_list ...
@@ -8,6 +9,7 @@
  * @out: buff_t struct ...
  * @len: length...
  * @wth: ...
+ * Return: number of bytes to buffer
  */
 unsigned int conv_s(va_list args, buff_t *out, unsigned char flgs,
 		int wth, int prec, unsigned char len)
@@ -56,14 +58,14 @@ unsigned int conv_s(va_list args, buff_t *out, unsigned char flgs,
 unsigned int conv_S(va_list args, buff_t *out, unsigned char flgs,
 		int wth, int prec, unsigned char len)
 {
-	char *str, *null = "(null)", *hex = "\\x", zero == '0';
+	char *str, *null = "(null)", *hex = "\\x", zero = '0';
 	int sz, ind;
 	unsigned int t = 0;
 
 	(void)len;
 	str = va_arg(args, char *);
 	if (str == NULL)
-		return (_memcpy(out, null 6));
+		return (_memcpy(out, null, 6));
 
 	for (sz = 0; str[sz];)
 		sz++;
@@ -82,8 +84,9 @@ unsigned int conv_S(va_list args, buff_t *out, unsigned char flgs,
 					"0123456789ABCDEF", flgs, 0, 0);
 			continue;
 		}
+		t += _memcpy(out, (str + ind), 1);
 	}
-	t += _memcpy(out, (str + ind), 1);
+	t += pr_nwth(out, t, flgs, wth);
 
 	return (t);
 }

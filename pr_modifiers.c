@@ -59,8 +59,8 @@ unsigned int pr_str_wth(buff_t *out, unsigned char flgs,
  * Return: number of bytes in buffer
  */
 
-unsigned int pr_nwth(buff_t *out, unsigned int printed, int wth,
-		unsigned char flgs)
+unsigned int pr_nwth(buff_t *out, unsigned int printed,
+		unsigned char flgs, int wth)
 {
 	unsigned int t = 0;
 	char bth = ' ';

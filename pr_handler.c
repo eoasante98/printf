@@ -21,7 +21,7 @@ unsigned char h_flgs(const char *flg, char *ind)
 		{0, 0}
 	};
 
-	for (x - 0; flg[x]; x++)
+	for (x = 0; flg[x]; x++)
 	{
 		for (y = 0; flgs[y].flg != 0; y++)
 		{

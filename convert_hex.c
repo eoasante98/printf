@@ -17,7 +17,7 @@ unsigned int conv_X(va_list args, buff_t *out, unsigned char flgs,
  * Return: number of bytes in buffer
  */
 unsigned int conv_x(va_list args, buff_t *out, unsigned char flgs,
-		int wth, int prec, unsigned char len);
+		int wth, int prec, unsigned char len)
 {
 	unsigned long int num;
 	unsigned int t = 0;
@@ -52,7 +52,7 @@ unsigned int conv_x(va_list args, buff_t *out, unsigned char flgs,
  * Return: number bytes in buffer
  */
 unsigned int conv_X(va_list args, buff_t *out, unsigned char flgs,
-		int wth, int prec, unsigned char len);
+		int wth, int prec, unsigned char len)
 {
 	unsigned long int num;
 	unsigned int t = 0;

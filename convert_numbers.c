@@ -20,7 +20,7 @@ unsigned int conv_o(va_list args, buff_t *out, unsigned char flgs,
  * Return: number of bytes in buffer
  */
 unsigned int conv_di(va_list args, buff_t *out, unsigned char flgs,
-		int wth, int prec, unsigned char len);
+		int wth, int prec, unsigned char len)
 {
 	long int e, dup;
 	unsigned int t = 0, count = 0;
@@ -42,7 +42,7 @@ unsigned int conv_di(va_list args, buff_t *out, unsigned char flgs,
 			count += 19;
 		else
 		{
-			for (dup = (e < 0) ? -e : e; dup > 0; dup /= 100)
+			for (dup = (e < 0) ? -e : e; dup > 0; dup /= 10)
 				count++;
 		}
 		count += (e == 0) ? 1 : 0;
@@ -85,11 +85,11 @@ unsigned int conv_di(va_list args, buff_t *out, unsigned char flgs,
  * Return: number of bytes in buffer
  */
 unsigned int conv_b(va_list args, buff_t *out, unsigned char flgs,
-		int wth, int prec, unsigned char len);
+		int wth, int prec, unsigned char len)
 {
 	unsigned int num;
 
-	num = va_arg(atgs, unsigned int);
+	num = va_arg(args, unsigned int);
 
 	(void)len;
 
@@ -108,7 +108,7 @@ unsigned int conv_b(va_list args, buff_t *out, unsigned char flgs,
  * Return: number bytes in buffer
  */
 unsigned int conv_o(va_list args, buff_t *out, unsigned char flgs,
-		int wth, int prec, unsigned char len);
+		int wth, int prec, unsigned char len)
 {
 	unsigned long int num;
 	unsigned int t = 0;
@@ -133,7 +133,7 @@ unsigned int conv_o(va_list args, buff_t *out, unsigned char flgs,
 }
 
 /**
- * conv_o - converts unsigned int to octal
+ * conv_u - converts unsigned int to octal
  * @flgs: flags
  * @len: length
  * @args: arguments
@@ -142,8 +142,8 @@ unsigned int conv_o(va_list args, buff_t *out, unsigned char flgs,
  * @out: output
  * Return: number of bytes to buffer
  */
-unsigned int conv_o(va_list args, buff_t *out, unsigned char flgs,
-		int wth, int prec, unsigned char len);
+unsigned int conv_u(va_list args, buff_t *out, unsigned char flgs,
+		int wth, int prec, unsigned char len)
 {
 	unsigned long int num;
 	unsigned int t = 0;

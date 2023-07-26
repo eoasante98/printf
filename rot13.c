@@ -25,7 +25,7 @@ char *pr_rot13(va_list args)
 		{
 			pstr[x] = str[x] + 13;
 		}
-		else if ((str[x] >= 'n && str[x] <= 'z') || (str[x] >= 'N' && str[x] <= 'Z'))
+		else if ((str[x] >= 'n' && str[x] <= 'z') || (str[x] >= 'N' && str[x] <= 'Z'))
 		{
 			pstr[x] = str[x] - 13;
 		}
@@ -33,7 +33,7 @@ char *pr_rot13(va_list args)
 			(pstr[x] = str[x]);
 		x++;
 	}
-	psrt[x] = '\0';
+	pstr[x] = '\0';
 
 	return (pstr);
 }

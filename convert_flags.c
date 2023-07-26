@@ -19,7 +19,7 @@ unsigned int conv_p(va_list args, buff_t *out, unsigned char flgs,
  * Return: number of bytes in buffer
  */
 unsigned int conv_c(va_list args, buff_t *out, unsigned char flgs,
-		int wth, int prec, unsigned char len);
+		int wth, int prec, unsigned char len)
 {
 	char c;
 	unsigned int t = 0;
@@ -47,7 +47,7 @@ unsigned int conv_c(va_list args, buff_t *out, unsigned char flgs,
  * Return: number of bytes in buffer
  */
 unsigned int conv_percent(va_list args, buff_t *out, unsigned char flgs,
-		int wth, int prec, unsigned char len);
+		int wth, int prec, unsigned char len)
 {
 	char percent = '%';
 	unsigned int t = 0;
@@ -74,7 +74,7 @@ unsigned int conv_percent(va_list args, buff_t *out, unsigned char flgs,
  * Return: number bytes in buffer
  */
 unsigned int conv_p(va_list args, buff_t *out, unsigned char flgs,
-		int wth, int prec, unsigned char len);
+		int wth, int prec, unsigned char len)
 {
 	char *null = "(nil)";
 	unsigned long int addr;
@@ -82,12 +82,12 @@ unsigned int conv_p(va_list args, buff_t *out, unsigned char flgs,
 
 	(void)len;
 
-	addr = va_arg(unsigned long int);
+	addr = va_arg(args, unsigned long int);
 	if (addr == '\0')
 		return (_memcpy(out, null, 5));
 
 	flgs |= 32;
-	t += conv_ubase(out, addr, "0123456789abcdef", flgs, wth, prec;
+	t += conv_ubase(out, addr, "0123456789abcdef", flgs, wth, prec);
 	t += pr_nwth(out, t, flgs, wth);
 
 	return (t);
