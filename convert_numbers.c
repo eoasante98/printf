@@ -63,6 +63,7 @@ unsigned int conv_di(va_list args, buff_t *out, unsigned char flgs,
 
 	if (ZERO_FLG == 0 && e < 0)
 		t += _memcpy(out, &neg, 1);
+
 	if (ZERO_FLG == 0 && (PLUS_FLG == 1 && e >= 0))
 		t += _memcpy(out, &plus, 1);
 
