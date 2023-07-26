@@ -84,14 +84,5 @@ int _printf(const char *format, ...)
 
 	t = r_printf(format, args, out);
 
-	if (t < 0)
-	{
-		free_buff(out);
-		va_end(args);
-		return (-1);
-	}
-
-	wipe(args, out);
-
 	return (t);
 }
